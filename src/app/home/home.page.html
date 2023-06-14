@@ -1,0 +1,154 @@
+<ion-content [fullscreen]="true">
+  <div id="full">
+    <div id="numbers">
+      <ion-row>
+        <ion-col>
+          <h1>{{numero}}</h1>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div id="container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="medium"
+              (click)="clear()">C</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="medium"
+              (click)="nega()">+/-</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="medium"
+              (click)="percen()">%</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button
+              size="large"
+              color="warning"
+              expand="block"
+              shape="round"
+              style="font-weight: bold"
+              (click)="dividir()">/</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+              (click)="numeros('7')">7</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('8')">8</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('9')">9</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button
+              size="large"
+              color="warning"
+              expand="block"
+              shape="round"
+              style="font-weight: bold"
+              (click)="mult()">X</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('4')" >4</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('5')">5</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('6')">6</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button
+              size="large"
+              color="warning"
+              expand="block"
+              shape="round"
+              style="font-weight: bold"
+              (click)="sub()">-</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('1')" >1</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('2')" >2</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click)="numeros('3')" >3</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button
+              size="large"
+              color="warning"
+              expand="block"
+              shape="round"
+              style="font-weight: bold"
+              (click)="soma()">+</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click) = "numeros('0')">0</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button size="large" expand="block" shape="round" color="light"
+            (click) = "decimal()" >,</ion-button
+            >
+          </ion-col>
+          <ion-col>
+            <ion-button
+              size="large"
+              color="warning"
+              expand="block"
+              shape="round"
+              style="font-weight: bold"
+              (click) = "igual()">=</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
