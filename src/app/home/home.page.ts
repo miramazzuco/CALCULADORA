@@ -10,6 +10,7 @@ export class HomePage {
   public numero = "0";
   public numeroaux = "0";
   public operacao = '';
+  public newnumber = false;
 
   constructor() {}
 
@@ -23,28 +24,33 @@ export class HomePage {
     
     this.operacao = 'mais';
     this.numeroaux = this.numero;
+    this.newnumber = true;
   }
 
   sub(){
    
     this.operacao = 'menos';
     this.numeroaux = this.numero;
+    this.newnumber = true;
   }
 
   mult(){
     this.operacao = 'mult';
     this.numeroaux = this.numero;
+    this.newnumber = true;
   }
 
   dividir(){
     
     this.operacao = 'divi';
     this.numeroaux = this.numero;
+    this.newnumber = true;
   }
 
   clear(){
       this.numero = "0";
       this.numeroaux = "0";
+      this.newnumber = true;
   }
 
   nega(){
@@ -53,9 +59,11 @@ export class HomePage {
       ? this.numero.replace('-','')
       : '-' + this.numero;
      }
+     this.newnumber = true;
   }
 
   percen(){
+    this.newnumber = true;
     if(this.numero.length <= 8){
    this.operacao = '';
    this.numeroaux = '';
@@ -64,6 +72,7 @@ export class HomePage {
 
    this.numero = (this.converte(this.numero) / 100).toFixed(fixado).toString().replace('.',',');
     }
+    
   }
 
   igual(){
@@ -81,11 +90,12 @@ export class HomePage {
         this.numero = this.mul(numerofinal,numerofinalaux).toString()
         break;
       case 'divi':
-        this.numero = this.div(numerofinal,numerofinalaux).toString()
+        this.numero = this.div(numerofinalaux,numerofinal).toString()
         break;
     }
 
     this.operacao = '';
+  
   }
 
 
@@ -117,12 +127,17 @@ export class HomePage {
   }
 
   numeros(num : string){
-    if((this.numero.startsWith('0') && !this.numero.startsWith('0,')) || this.operacao != ''){
+    if((this.numero.startsWith('0') && !this.numero.startsWith('0,'))){
       this.numero = '';
     }
 
     if(this.numero.length <= 8){
+      if(this.newnumber){
+        this.numero = num;
+        this.newnumber = false;
+      }else{
       this.numero += num;
+      }
     }
 
   
